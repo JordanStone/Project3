@@ -12,14 +12,3 @@ average probe number will fluctuate slightly between runs of the program, but
 it is always under (1 + a), signifigantly so in cases with a larger a.
 On my a=100 test, the probe average appears to never increase over 40,
 although the theoretical ceiling is bounded at O(1 + 100) = O(101).
-
-
-p2 Observations:
-For p2, confirmation that average probe count follows the theoretical is more
-difficult as it must approximate a specific value. 
-For INSERT, this value is (1+1/(1-a)^2)/2. On the values of a attempted, the
-average probes appeared to hit close to the expected value, but never very
-close.
-For DELETE, the value is (1+1/(1-a))/2. On the values of a attempted here, the
-average probes do land closer to the expected value and always land within at
-least 0.5 difference of the expected.
