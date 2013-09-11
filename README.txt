@@ -5,7 +5,7 @@ All program code is written in python and is stored in the .py format.
 This code was originally part of a group project - code belonging to my partner
 has been removed as to not post it without his permission.
 
-	Folder hw3jls564:
+	Folder Project3:
 		README.txt - text document detailing files submitted in this project and
 		completeness of every section.
 
