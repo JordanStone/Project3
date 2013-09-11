@@ -1,0 +1,25 @@
+p1 Observations:
+For p1, average probe count always stays under (1 + a) for both INSERT and
+DELETE, for each value of a that I tested. 
+Every dict that I tested had the same amount of buckets at 10, but I increased
+the number of input/deleted values to increase the value of a. I decided this
+was a more easily measurable way to observe average probe, as the hash I
+implemented relies on the number of buckets in the dictionary. Changing the
+hash would likely cause less comparable data between values of a.
+
+The input values are completely random in a large domain of integers, and the
+average probe number will fluctuate slightly between runs of the program, but
+it is always under (1 + a), signifigantly so in cases with a larger a.
+On my a=100 test, the probe average appears to never increase over 40,
+although the theoretical ceiling is bounded at O(1 + 100) = O(101).
+
+
+p2 Observations:
+For p2, confirmation that average probe count follows the theoretical is more
+difficult as it must approximate a specific value. 
+For INSERT, this value is (1+1/(1-a)^2)/2. On the values of a attempted, the
+average probes appeared to hit close to the expected value, but never very
+close.
+For DELETE, the value is (1+1/(1-a))/2. On the values of a attempted here, the
+average probes do land closer to the expected value and always land within at
+least 0.5 difference of the expected.
